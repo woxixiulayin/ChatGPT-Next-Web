@@ -3,6 +3,7 @@ import "./styles/globals.scss";
 import "./styles/markdown.scss";
 import "./styles/highlight.scss";
 import { getBuildConfig } from "./config/build";
+import { useEffect } from "react";
 
 const buildConfig = getBuildConfig();
 
@@ -21,6 +22,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <head>
@@ -43,13 +45,12 @@ export default function RootLayout({
         ></link>
         <script src="/serviceWorkerRegister.js" defer></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-EC3G09FHYT"></script>
-        <script>
-          {window.dataLayer = window.dataLayer || [];
+        <script dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-EC3G09FHYT');}
-        </script>
+          gtag('js', new Date());
+          gtag('config', 'G-EC3G09FHYT');`
+        }}></script>
       </head>
       <body>{children}</body>
     </html>
