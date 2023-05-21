@@ -30,6 +30,7 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
         />
+        <meta name="ahrefs-site-verification" content="ccc3ca0c814e8960c82bf3335935c837dcab85c53ff53838f6b2626782535882"></meta>
         <meta
           name="theme-color"
           content="#151515"
